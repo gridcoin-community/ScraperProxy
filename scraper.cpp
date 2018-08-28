@@ -35,15 +35,15 @@ int main()
 
         int64_t sbage = data.sbage();
 
-        // Give 400 seconds before superblock needed before we sync
-//        if (sbage <= 86000 && sbage >= 0)
-//            _log(INFO, "main", "Superblock not needed. age=" + std::to_string(sbage));
+        // Give 300 seconds before superblock needed before we sync
+        if (sbage <= 86100 && sbage >= 0)
+            _log(INFO, "main", "Superblock not needed. age=" + std::to_string(sbage));
 
-//        else if (sbage <= -1)
-//            _log(ERROR, "main", "RPC error occured, check logs");
+        else if (sbage <= -1)
+            _log(ERROR, "main", "RPC error occured, check logs");
 
-//        else
-//        {
+        else
+        {
             if (!data.wlimport())
                 _log(WARNING, "main", "Refreshing of whitelist failed.. using old data");
 
@@ -56,7 +56,7 @@ int main()
 
             DownloadProjectRacFiles();
 
-//        }
+        }
 
         _nntester(INFO, "MAIN", "download size so far: " + std::to_string(ndownloadsize) + " upload size so far: " + std::to_string(nuploadsize));
 
@@ -1020,23 +1020,3 @@ void testdata(const std::string& etag)
 
 
 }
-
-/*bool GatheradfdsfTeamFile(const std::string& sPrjFile)
-{
-    statscurl prjheader;
-
-    if (prjheader.http_header(sPrjFile, sETag))
-    {
-        _log(INFO, "GatherProjectHeader", "Successfully received project file header <prjfile=" + sPrjFile + ", etag=" + sETag + ">");
-
-        return true;
-    }
-
-    else
-    {
-        _log(WARNING, "GatherProjectHeader", "Failed to receive project file header");
-
-        return false;
-    }
-}
-*/
