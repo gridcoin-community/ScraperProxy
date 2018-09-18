@@ -28,7 +28,7 @@ This scraper is actually quite fast with what it does.
 
 CURRENT g++ compile flags:
 
--std=c++11 -lcurl -lboost_system -DBOOST_NO_CXX11_SCOPED_ENUMS -lboost_filesystem -lstdc++fs -lboost_iostreams -lz -g -ljsoncpp
+-std=c++11 -lcurl -lboost_system -DBOOST_NO_CXX11_SCOPED_ENUMS -lboost_filesystem -lboost_iostreams -lz -ljsoncpp
 
 NOTE: -g for testing and the valgrinding I've done.
 
