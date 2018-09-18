@@ -5,7 +5,6 @@
 #include <vector>
 #include <cmath>
 #include <zlib.h>
-#include <fstream>
 #include <iostream>
 #include <curl/curl.h>
 #include <inttypes.h>
